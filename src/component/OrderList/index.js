@@ -7,10 +7,12 @@ export class OrderList extends Component {
 		this.state = {data: []};
 	}
 	componentDidMount(){
-		//用fetch从mock中获取数据
+		//用fetch从mock中获取数据,网络请求传递的参数是一个url
 		 fetch('/mock/orders.json').then(res =>{
+		 	console.log("res:",res);
 		 	if(res.ok){
 		 		res.json().then(data => { 
+		 			console.log("data:",data);
 		 			this.setState({
 		 				data
 		 			})
